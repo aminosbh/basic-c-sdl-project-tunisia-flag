@@ -34,7 +34,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
-#include "utils.h"
+#include "tnflag.h"
 
 // Define screen dimensions
 #define SCREEN_WIDTH    800
@@ -72,17 +72,10 @@ int main(int argc, char* args[])
         }
         else
         {
-            // Declare rect of square
-            SDL_Rect squareRect;
-
-            // Square dimensions: Half of the min(SCREEN_WIDTH, SCREEN_HEIGHT)
-            squareRect.w = MIN(SCREEN_WIDTH, SCREEN_HEIGHT) / 2;
-            squareRect.h = MIN(SCREEN_WIDTH, SCREEN_HEIGHT) / 2;
-
-            // Square position: In the middle of the screen
-            squareRect.x = SCREEN_WIDTH / 2 - squareRect.w / 2;
-            squareRect.y = SCREEN_HEIGHT / 2 - squareRect.h / 2;
-
+            // Initialize Tunisia flag
+            TunisiaFlag flag;
+            TunisiaFlag_init(&flag, SCREEN_WIDTH * 0.80, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+            TunisiaFlag_setBorder(&flag, 4, 0x0, 0x0, 0x0, 0xFF);
 
             // Event loop exit flag
             bool quit = false;
@@ -107,11 +100,13 @@ int main(int argc, char* args[])
                 // Clear screen
                 SDL_RenderClear(renderer);
 
-                // Set renderer color red to draw the square
-                SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
+                // Render Tunisia flag
+                TunisiaFlag_render(&flag, renderer);
 
-                // Draw filled square
-                SDL_RenderFillRect(renderer, &squareRect);
+                // Show "Tunisia"
+                stringRGBA(renderer,
+                           flag.border.x, flag.border.y + flag.border.h + 10,
+                           "Tunisia", 0x0, 0x0, 0x0, 0xFF);
 
                 // Show copyright notice
                 stringRGBA(renderer, 10, 10,
