@@ -58,7 +58,7 @@ target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 #target_link_libraries(${PROJECT_NAME} ${SDL2TTF_LIBRARIES})
 
 # Add SDL2_gfx library
-#pkg_search_module(SDL2GFX REQUIRED SDL2_gfx)
-#include_directories(${SDL2GFX_INCLUDE_DIRS})
-#target_link_libraries(${PROJECT_NAME} ${SDL2GFX_LIBRARIES})
+pkg_search_module(SDL2GFX REQUIRED SDL2_gfx)
+include_directories(${SDL2GFX_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${SDL2GFX_LIBRARIES})
 

@@ -32,6 +32,7 @@
 #include <stdbool.h>
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 
 // Define MAX and MIN macros
 #define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
@@ -113,6 +114,10 @@ int main(int argc, char* args[])
 
                 // Draw filled square
                 SDL_RenderFillRect(renderer, &squareRect);
+
+                // Show copyright notice
+                stringRGBA(renderer, 10, 10,
+                           "Copyright (C) Amine Ben Hassouna, MIT license", 0x0, 0x0, 0x0, 0xFF);
 
                 // Update screen
                 SDL_RenderPresent(renderer);

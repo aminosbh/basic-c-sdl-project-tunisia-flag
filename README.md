@@ -9,21 +9,21 @@ It draws the flag of [Tunisia][] using basic graphics primitives.
 - C Compiler (gcc, ...)
 - [CMake][]
 - [SDL2][SDL] library
+- [SDL2_gfx][] library
 
 **On Debian/Ubuntu based distributions, use the following command:**
 
 ```sh
-sudo apt install git-core build-essential pkg-config cmake cmake-data libsdl2-dev
+sudo apt install git-core build-essential pkg-config cmake cmake-data libsdl2-dev libsdl2-gfx-dev
 ```
 
 **Optional packages:**
 
 - [SDL2_image][] library
 - [SDL2_ttf][] library
-- [SDL2_gfx][] library
 
 ```sh
-sudo apt install libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev
+sudo apt install libsdl2-image-dev libsdl2-ttf-dev
 ```
 
 ## Build instructions
@@ -45,7 +45,7 @@ make
 ./basic-c-sdl-project-tunisia-flag
 ```
 
-***Note:*** To use SDL2_image, SDL2_ttf or SDL2_gfx, you should uncomment
+***Note:*** To use SDL2_image or SDL2_ttf, you should uncomment
 some instructions in the CMakeLists.txt file and re-execute `cmake ..` and `make`
 
 ### Open the project with an IDE under Linux
