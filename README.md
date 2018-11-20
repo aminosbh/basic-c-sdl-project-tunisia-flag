@@ -1,7 +1,9 @@
 # Basic C SDL project : Tunisia flag
 
-This project is a basic C [SDL][] project that uses [CMake][] as a build system.
+This project is a basic C [SDL][] project that uses [CMake][] as a build system.<br>
 It draws the flag of [Tunisia][] using basic graphics primitives.
+
+![Tunisia flag](TunisiaFlag.png)
 
 ## Dependencies
 
