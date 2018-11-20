@@ -1,6 +1,7 @@
-# Basic C SDL project
+# Basic C SDL project : Tunisia flag
 
 This project is a basic C [SDL][] project that uses [CMake][] as a build system.
+It draws the flag of [Tunisia][] using basic graphics primitives.
 
 ## Dependencies
 
@@ -29,8 +30,8 @@ sudo apt install libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev
 
 ```sh
 # Clone this repo
-git clone https://gitlab.com/aminosbh/basic-c-sdl-project.git
-cd basic-c-sdl-project
+git clone https://gitlab.com/aminosbh/basic-c-sdl-project-tunisia-flag.git
+cd basic-c-sdl-project-tunisia-flag
 
 # Create a build folder
 mkdir build
@@ -41,7 +42,7 @@ cmake ..
 make
 
 # Run
-./basic-c-sdl-project
+./basic-c-sdl-project-tunisia-flag
 ```
 
 ***Note:*** To use SDL2_image, SDL2_ttf or SDL2_gfx, you should uncomment
@@ -66,3 +67,4 @@ This project is distributed under the terms of the MIT license
 [SDL2_image]: https://www.libsdl.org/projects/SDL_image
 [SDL2_ttf]: https://www.libsdl.org/projects/SDL_ttf
 [SDL2_gfx]: http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx
+[Tunisia]: https://en.wikipedia.org/wiki/Tunisia

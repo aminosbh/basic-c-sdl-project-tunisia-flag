@@ -52,7 +52,7 @@ int main(int argc, char* args[])
     }
 
     // Create window
-    SDL_Window *window = SDL_CreateWindow("Basic C SDL project",
+    SDL_Window *window = SDL_CreateWindow("Basic C SDL project: Tunisia Flag",
                                           SDL_WINDOWPOS_UNDEFINED,
                                           SDL_WINDOWPOS_UNDEFINED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT,
