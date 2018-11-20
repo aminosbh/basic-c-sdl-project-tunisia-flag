@@ -42,6 +42,12 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 # Load CMake module : FindPkgConfig
 include(FindPkgConfig)
 
+# Load CMake module : CheckIncludeFiles
+include(CheckIncludeFiles)
+
+# Load CMake module : CheckLibraryExists
+include(CheckLibraryExists)
+
 # Add SDL2 library
 pkg_search_module(SDL2 REQUIRED sdl2)
 include_directories(${SDL2_INCLUDE_DIRS})
@@ -62,3 +68,16 @@ pkg_search_module(SDL2GFX REQUIRED SDL2_gfx)
 include_directories(${SDL2GFX_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${SDL2GFX_LIBRARIES})
 
+# Add math library
+check_include_files(math.h HAVE_MATH_H)
+CHECK_LIBRARY_EXISTS(m sin "" HAVE_MATH_SIN)
+CHECK_LIBRARY_EXISTS(m cos "" HAVE_MATH_COS)
+if(NOT HAVE_MATH_H)
+    message(FATAL_ERROR "No 'math.h' found")
+elseif(NOT HAVE_MATH_SIN)
+    message(FATAL_ERROR "No sin() found")
+elseif(NOT HAVE_MATH_COS)
+    message(FATAL_ERROR "No cos() found")
+else()
+    target_link_libraries(${PROJECT_NAME} m)
+endif()
