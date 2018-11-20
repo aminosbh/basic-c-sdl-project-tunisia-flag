@@ -114,6 +114,13 @@ int main(int argc, char* argv[])
 
                 // Update screen
                 SDL_RenderPresent(renderer);
+
+                // Save screenshot
+                if(argc > 1)
+                {
+                    saveScreenshot(renderer, SCREEN_WIDTH, SCREEN_HEIGHT, argv[1]);
+                    quit = true;
+                }
             }
 
             // Destroy renderer

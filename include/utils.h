@@ -50,4 +50,7 @@ int aafilledPolygonRGBA(SDL_Renderer * renderer, const Sint16 *vx, const Sint16 
 
 void fivePointStar(int x, int y, float outerRad, float innerRad, float rotation, Sint16 *vx, Sint16 *vy);
 
+int saveScreenshot(SDL_Renderer *renderer, int w, int h, const char *filename);
+int saveScreenshotRect(SDL_Renderer *renderer, const SDL_Rect *rect, const char *filename);
+
 #endif // UTILS_H

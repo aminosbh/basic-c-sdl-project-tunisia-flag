@@ -86,3 +86,27 @@ void fivePointStar(int x, int y, float outerRad, float innerRad, float rotation,
         vy[i] = (int) ((r * cos(omega)) + y);
     }
 }
+
+int saveScreenshot(SDL_Renderer *renderer, int w, int h, const char *filename)
+{
+    SDL_Rect rect = { 0, 0, w, h };
+    return saveScreenshotRect(renderer, &rect, filename);
+}
+
+int saveScreenshotRect(SDL_Renderer *renderer, const SDL_Rect *rect, const char *filename)
+{
+    const Uint32 format = SDL_PIXELFORMAT_RGBA32;
+
+    if(!rect)
+    {
+        fprintf(stderr, "%s requires non null rect argument\n", __FUNCTION__);
+        return -1;
+    }
+
+    SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat(0, rect->w, rect->h, 32, format);
+    SDL_RenderReadPixels(renderer, rect, format, surface->pixels, surface->pitch);
+    SDL_SaveBMP(surface, filename);
+    SDL_FreeSurface(surface);
+
+    return 0;
+}
