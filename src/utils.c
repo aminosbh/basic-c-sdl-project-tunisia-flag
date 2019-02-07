@@ -99,7 +99,7 @@ int saveScreenshotRect(SDL_Renderer *renderer, const SDL_Rect *rect, const char 
 
     if(!rect)
     {
-        fprintf(stderr, "%s requires non null rect argument\n", __FUNCTION__);
+        fprintf(stderr, "%s requires non null rect argument\n", __func__);
         return -1;
     }
 

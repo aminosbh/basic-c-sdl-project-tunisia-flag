@@ -63,8 +63,8 @@ typedef struct Crescent Crescent;
 
 struct Star
 {
-    Uint16 vx[10];
-    Uint16 vy[10];
+    Sint16 vx[10];
+    Sint16 vy[10];
 };
 typedef struct Star Star;
 
