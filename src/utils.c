@@ -30,8 +30,9 @@
 
 #include "utils.h"
 
+#include <stdio.h>
 #include <math.h>
-#include <SDL2/SDL2_gfxPrimitives.h>
+#include <SDL2_gfxPrimitives.h>
 
 int aafilledEllipseColor(SDL_Renderer *renderer, Sint16 x, Sint16 y, Sint16 rx, Sint16 ry, Uint32 color)
 {
